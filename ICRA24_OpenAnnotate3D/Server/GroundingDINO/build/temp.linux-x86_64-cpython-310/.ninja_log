@@ -1,0 +1,5 @@
+# ninja log v5
+1	257	1715499838304705886	/disk/OpenAnnotate/OpenSource/v1/GroundingDINO/build/temp.linux-x86_64-cpython-310/disk/OpenAnnotate/OpenSource/v1/GroundingDINO/groundingdino/models/GroundingDINO/csrc/cuda_version.o	e7341b7aaf79ae89
+0	1879	1715499839924732930	/disk/OpenAnnotate/OpenSource/v1/GroundingDINO/build/temp.linux-x86_64-cpython-310/disk/OpenAnnotate/OpenSource/v1/GroundingDINO/groundingdino/models/GroundingDINO/csrc/MsDeformAttn/ms_deform_attn_cpu.o	17fb56870ea0b0b8
+1	6682	1715499844728813129	/disk/OpenAnnotate/OpenSource/v1/GroundingDINO/build/temp.linux-x86_64-cpython-310/disk/OpenAnnotate/OpenSource/v1/GroundingDINO/groundingdino/models/GroundingDINO/csrc/vision.o	74aa237f96a4ce04
+1	7680	1715499845724829757	/disk/OpenAnnotate/OpenSource/v1/GroundingDINO/build/temp.linux-x86_64-cpython-310/disk/OpenAnnotate/OpenSource/v1/GroundingDINO/groundingdino/models/GroundingDINO/csrc/MsDeformAttn/ms_deform_attn_cuda.o	fdacf6a931db1237
