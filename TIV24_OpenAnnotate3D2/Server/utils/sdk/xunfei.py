@@ -250,19 +250,3 @@ class XunFeiCloud2(object):
             elif isinstance(result, bytes):
                 # print("发生错误···\n", result)
                 return result
-    
-# 输入讯飞开放平台的appid，secret_key和待转写的文件路径
-# if __name__ == '__main__':
-#     api = XunFeiCloud()
-    
-#     startTime = time.time()
-#     res = api.get_result("/home/eric/data2/OpenAnnotate/dev/dev-Grounded-Segment-Anything/audio/12.m4a")
-#     print(res)
-#     print(time.time() - startTime)
-    
-#     gClass = XunFeiCloud2()
-#     startTime = time.time()
-#     fileurl = gClass.get_fileurl("/home/eric/data2/OpenAnnotate/dev/dev-Grounded-Segment-Anything/audio/12.m4a")
-#     res = gClass.get_result()
-#     print(res)
-#     print(time.time() - startTime)
