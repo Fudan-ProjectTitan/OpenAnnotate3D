@@ -45,7 +45,7 @@ pip install -r requirements.txt
 5. Run the code `python server.py` in the terminal
 6. After completing the above steps, you will see the following output in the terminal.
 
-![01.png](assets/01.png)
+![01.png](Server/assets/01.png)
 
 The port used by the server is `5002` by default. If you need to use other ports, please modify the `port` parameter value in the following code in the `server.py` file
 
