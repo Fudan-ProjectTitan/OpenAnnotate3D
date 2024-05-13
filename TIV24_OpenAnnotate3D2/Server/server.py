@@ -8,6 +8,7 @@ from utils.result_entity import ResultEntity
 from utils.agent import translate
 from utils.process import process_image
 from utils.sdk.baidu import BaiduCloud
+from utils.whisper_model import speech_recognition
 from utils.command import run as command_run
 
 baidu_api = BaiduCloud()
@@ -59,8 +60,7 @@ def get_audio():
         audio_file = os.path.join(audio_dir, audio.filename)
         audio.save(audio_file)
         
-        speech_language = ''
-        speech_text = baidu_api.short_speech(audio_file)
+        speech_text, speech_language = speech_recognition(audio_file)
         return jsonify(ResultEntity(200, "success.", {"speech_text": speech_text, "speech_language": speech_language}).result())
     except Exception as e:
         return jsonify(ResultEntity(500, str(e)).result())
