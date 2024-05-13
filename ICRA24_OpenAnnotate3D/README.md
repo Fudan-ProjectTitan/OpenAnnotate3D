@@ -34,8 +34,11 @@ cd openannotate3d
 git clone https://github.com/Fudan-ProjectTitan/OpenAnnotate3D.git
 cd OpenAnnotate3D/ICRA24_OpenAnnotate3D/Server
 
-chmod +x setup.sh
-./setup.sh
+conda create -n openannotate3d-icra24 python=3.8
+conda activate openannotate3d-icra24
+conda install pytorch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+pip install -r requirements.txt
 ```
 
 4. Download [GroundingDINO Model Checkpoints](https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth) and [Segment Anything Model Checkpoints](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth), And put the downloaded file into the `models` folder

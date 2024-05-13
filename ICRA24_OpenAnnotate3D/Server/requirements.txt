@@ -1,0 +1,7 @@
+groundingdino @ git+https://github.com/IDEA-Research/GroundingDINO.git@16e0ccdb7da40613591666abe2cb06f91f961503
+segment_anything @ git+https://github.com/facebookresearch/segment-anything.git@6fdee8f2727f4506cfbbe553e23b895e27956588
+langchain
+openai==0.28
+openai-whisper
+flask
+chardet
