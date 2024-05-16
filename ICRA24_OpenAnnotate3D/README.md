@@ -1,7 +1,5 @@
 # ICRA24_OpenAnnotate3D 
 
-- YIJIE ZHOU - (zhouyijie20@fudan.edu.cn)
-
 ## Overview
 Our program consists of `server` part and `client` part:
 1. The client is written in `Python 3.8.10` and `C#` code.
