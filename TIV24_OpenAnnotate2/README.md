@@ -65,7 +65,7 @@ After the modification, run `server.py` to take effect.
 - RAM: `16G` and above
 - GPU recommended `RTX 4060` and above
 
-### Equipment before use
+### pre-requirements
 
 1. Install `Python 3.8.10`. Installing other versions of Python may cause the client to fail to run properly.
 2. Install runtime.
@@ -88,7 +88,8 @@ pip install matplotlib
 	</appSettings>
 </configuration>
 ```
-5. Please put the image and point cloud files in the `Data` directory of the client files. The directory structure is as follows
+
+5. Put the image and point cloud files in the `Data` directory of the client files. The directory structure is as follows
 - Data
    - 000000.bin
    - 000000.png

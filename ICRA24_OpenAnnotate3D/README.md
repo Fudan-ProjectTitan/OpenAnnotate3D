@@ -89,7 +89,7 @@ pip install matplotlib
 </configuration>
 ```
 
-5. Please put the image and point cloud files in the `Data` directory of the client files. The directory structure is as follows
+5. Put the image and point cloud files in the `Data` directory of the client files. The directory structure is as follows
 - Data
    - 000000.bin
    - 000000.png
