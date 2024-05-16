@@ -1,31 +1,33 @@
-# ICRA24_OpenAnnotate3D
+# ICRA24_OpenAnnotate3D 
+
+- YIJIE ZHOU - (zhouyijie20@fudan.edu.cn)
 
 ## Overview
-Our program consists of `server` and `client`:
-1. The client is based on `VTK` and `Python 3.8.10`, written in `C#` code.
-2. The server is written in `Python` code.
-3. Since our client implementation is relatively complex and requires a lot of configuration during construction, for the convenience of readers, we provide compiled executable files, which are located in the `Client` directory.
-4. Since the `VTK` version used by the client is a trial version, the trial period is one month, so the downloaded client can only be used for 30 days. In this project, we will update it regularly. If you want a permanent version, please Contact the author of this article.
-5. The open version of the client currently only supports reading a maximum of 10 pictures and point cloud files, and will be ignored if it exceeds the limit. If you need to support reading more files, please contact the author of this article.
+Our program consists of `server` part and `client` part:
+1. The client is written in `Python 3.8.10` and `C#` code.
+2. The server is written in `Python 3.8` code.
+3. Since our client implementation is complex and requires a lot of configuration, for your convenience, we provide compiled executable files, which are located in the `Client` directory.
+4. Since the `VTK` version used by the client is a trial version, the trial period is one month, so the client exe files will only available for 30 days. We will update it regularly. So, if your client is not working please download it again.
+5. The online version of the client is a limited version only supports reading a maximum of 10 pictures and 10 point cloud files, and will ignore extra files. If you need a full version, please contact the author.
 
 ## Server
 
-### Machine configuration
+### System configuration
 
-- Operating system `Ubuntu 18.04` and above
-- Graphics card recommended `RTX 3060` and above
+- Operating system: `Ubuntu 18.04` and above
+- GPU recommended `RTX 4060` and above
 
 ### Environmental preparation
 
-1. Before compiling the code, please go to the [OpenAI](https://openai.com/) website to apply for a `GPT Key`. We recommend using GPT 4.0.
-2. After the application is completed, you need to add the following environment variables to the file `~/.bashrc`:
+1. Go to the [OpenAI](https://openai.com/) website to get a `GPT Key`. We recommend using GPT 4.0.
+2. Add the following environment variables to the file `~/.bashrc`:
 
 ```bash
-# Please replace sk-xxx with your application API KEY
+# Please sk-xxx with your API KEY
 export OPENAI_API_KEY="sk-xxx"
 ``` 
 
-3. Create a new terminal and enter the following command to create the server running environment.
+3. Open a terminal window and enter the following command to create the server running environment.
 
 ```bash
 # Download code
@@ -47,60 +49,56 @@ pip install -r requirements.txt
 
 ![01.png](Server/assets/01.png)
 
-The port used by the server is `5001` by default. If you need to use other ports, please modify the `port` parameter value in the following code in the `server.py` file
+The port used by the server is `5001` by default. If you need to use other ports, please modify.
 
 ```python
 process = multiprocessing.Process(target=(app.run(host='0.0.0.0', port=5001)))
 ```
 
-After the modification is completed, you need to re-run the `server.py` file to take effect.
+After the modification, run `server.py` to take effect.
 
 ## Client
 
-### Machine configuration
+### System configuration
 
-- Operating system `Windows 10` and above
-- Memory `8G` and above
-- It is recommended to use our program on machines with independent graphics, so the effect will be better
+- Operating system: `Windows 10` and above
+- RAM: `16G` and above
+- GPU recommended `RTX 4060` and above
 
-### Data preparation
+### pre-requirements
 
-1. Please put the image and point cloud files in the `Data` directory of the client. The directory structure is as follows
+1. Install `Python 3.8.10`. Installing other versions of Python may cause the client to fail to run properly.
+2. Install runtime.
+```bash
+pip install numpy
+pip install matplotlib
+```
+
+3. Decompress the client compressed file to an English path.
+4. Find the file `OpenAnnotate3D.dll.config` under the client root directory, modify the following configuration.
+- Change `Server request address` value to your server address.
+- Change the `Python environment address` to the directory selected during installation in step 1.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<appSettings>
+		<add key="Host" value="http://127.0.0.1:5001"/>
+
+		<add key="PythonDLL" value="E:\Program Files\Python38\python38.dll"/>
+	</appSettings>
+</configuration>
+```
+
+5. Please put the image and point cloud files in the `Data` directory of the client files. The directory structure is as follows
 - Data
    - 000000.bin
    - 000000.png
    - 000001.bin
    - 000001.png
    - ...
-2. The point cloud file suffix is: `.bin`, the image file suffix is: `.png`
+6. The point cloud file suffix is: `.bin`, the image file suffix is: `.png`
 
-### Equipment before use
-
-1. Install `Python 3.8.10`, download address: [click here](https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe), please note that only This version of Python can be installed. Installing other versions of Python may cause the client to fail to run properly.
-2. After the installation is complete, open the terminal and enter the command `python -V`. If `Python 3.8.10` is output, the installation is successful.
-3. Enter the following command to install the Python packages required for runtime. After the installation is complete, close the terminal.
-```bash
-pip install numpy
-pip install matplotlib
-```
-
-4. Please decompress the client compressed file to an English path.
-5. Find the file `OpenAnnotate3D.dll.config` under the client root directory, open it with Notepad, and modify the following configuration of the file
-- `Server request address`.
-- Please change the `Python environment address` to the directory selected during installation in step 1.
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-	<appSettings>
-		<!-- Server request address, the value in value, please modify it according to the server's configuration address and port. -->
-		<add key="Host" value="http://127.0.0.1:5001"/>
-
-		<!-- Python environment address, please modify it according to your Python installation location -->
-		<add key="PythonDLL" value="E:\Program Files\Python38\python38.dll"/>
-	</appSettings>
-</configuration>
-```
-5. Run `OpenAnnotate3D.exe`
+7. Run `OpenAnnotate3D.exe`
 
 ## Citation
 
